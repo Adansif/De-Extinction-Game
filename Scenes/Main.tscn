@@ -1,22 +1,24 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhr32tp7unigc"]
 
 [ext_resource type="PackedScene" uid="uid://c7ofujwod8kvh" path="res://Scenes/Background.tscn" id="1_o41ed"]
+[ext_resource type="Script" path="res://Scripts/Main.cs" id="1_p3mye"]
 [ext_resource type="PackedScene" uid="uid://bvcq4knvc04w7" path="res://Scenes/Player.tscn" id="2_q6t88"]
-[ext_resource type="Texture2D" uid="uid://bxvscrfo0fxux" path="res://icon.svg" id="3_s3wgr"]
 [ext_resource type="Script" path="res://Scripts/Camera.cs" id="4_r0vkl"]
 
 [node name="Main" type="Node2D" groups=["Main"]]
 position = Vector2(909, 532)
+script = ExtResource("1_p3mye")
 
 [node name="Background" parent="." instance=ExtResource("1_o41ed")]
 
 [node name="Player" parent="." instance=ExtResource("2_q6t88")]
-position = Vector2(-747, 423)
+position = Vector2(-747, 451)
 scale = Vector2(6, 6)
-
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(630, 522)
-texture = ExtResource("3_s3wgr")
 
 [node name="Camera" type="Camera2D" parent="."]
 script = ExtResource("4_r0vkl")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
