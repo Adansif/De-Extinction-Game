@@ -4,12 +4,14 @@ using System.Numerics;
 
 public partial class Main : Node2D
 {
-	private Random random = new Random();
+	private Random random = new();
+	private CharacterBody2D player;
 	private Timer timer;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		timer = this.GetNode<Timer>("./Timer");
+		player = this.GetNode<CharacterBody2D>("./Player");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,6 +22,12 @@ public partial class Main : Node2D
 
 	private void _on_timer_timeout(){
 		SpawnEnemy();
+		
+		var playerScript = (Player)player;
+		if(playerScript.Speed < 6000){
+			playerScript.Speed += 10;
+		}
+
 		timer.WaitTime = random.Next(1, 4);
 	}
 

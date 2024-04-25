@@ -4,8 +4,9 @@ using System;
 public partial class Player : CharacterBody2D
 {
 	private AnimationPlayer animation;
-	public const float Speed = 400.0f;
+	public float Speed = 400.0f;
 	public const float JumpVelocity = -600.0f;
+	private bool IsDead {get; set;} = false;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
@@ -14,9 +15,14 @@ public partial class Player : CharacterBody2D
 		animation = GetNode<AnimationPlayer>("./PlayerAnimation");
 	}
 
-	public override void _PhysicsProcess(double delta)
+	public override async void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
+
+		if (IsDead){
+				await ToSignal(animation, "animation_finished");
+				IsDead = false;
+		}
 
 		// Add the gravity.
 		if (!IsOnFloor())
@@ -35,5 +41,17 @@ public partial class Player : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
+	}
+
+	private void _on_player_area_body_entered(Node2D body){
+		if( body is Enemy){
+			Die();
+			GD.Print("Entro");
+		}
+	}
+
+	private void Die(){
+		IsDead = true;
+		animation.Play("Hit");
 	}
 }

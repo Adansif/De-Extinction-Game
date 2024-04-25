@@ -29,6 +29,7 @@ position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_fhb6u")
 
 [node name="PlayerArea" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="AreaCollision" type="CollisionShape2D" parent="PlayerArea"]
 position = Vector2(-0.5, 1)
@@ -38,3 +39,5 @@ shape = SubResource("RectangleShape2D_fhb6u")
 libraries = {
 "": SubResource("AnimationLibrary_h410i")
 }
+
+[connection signal="body_entered" from="PlayerArea" to="." method="_on_player_area_body_entered"]
