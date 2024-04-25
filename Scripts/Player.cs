@@ -35,8 +35,5 @@ public partial class Player : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
-		if(this.Position.Y >= 426.61493f){
-			GD.Print(this.Position.X);
-		}
 	}
 }
