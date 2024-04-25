@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvcq4knvc04w7"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_feo1f"]
+[ext_resource type="Texture2D" uid="uid://c1hnvv2igdbfw" path="res://Sprites/Character/Doux.png" id="1_y0fjq"]
+[ext_resource type="Animation" uid="uid://cwqnmtqfpqw7a" path="res://Animations/WalkCrouch.res" id="2_0wrup"]
+[ext_resource type="Animation" uid="uid://bcbgiulbqy305" path="res://Animations/Walk.res" id="3_y1vxp"]
+[ext_resource type="Animation" uid="uid://dss6asr74c3n2" path="res://Animations/Hit.res" id="4_cwbxm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhb6u"]
+size = Vector2(15, 18)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h410i"]
+_data = {
+"Hit": ExtResource("4_cwbxm"),
+"Walk": ExtResource("3_y1vxp"),
+"WalkCrouch": ExtResource("2_0wrup")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_feo1f")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_y0fjq")
+hframes = 24
+frame = 16
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_fhb6u")
+
+[node name="PlayerArea" type="Area2D" parent="."]
+
+[node name="AreaCollision" type="CollisionShape2D" parent="PlayerArea"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_fhb6u")
+
+[node name="PlayerAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h410i")
+}
