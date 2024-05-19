@@ -5,6 +5,7 @@ public partial class Player : CharacterBody2D
 {
 	private AnimationPlayer animation;
 	public float Speed = 400.0f;
+	public float points = 0;
 	public const float JumpVelocity = -800.0f;
 	private bool IsDead {get; set;} = false;
 
@@ -39,6 +40,8 @@ public partial class Player : CharacterBody2D
 		
 		velocity.X = direction.X * Speed;
 
+		points += (float)delta;
+
 		Velocity = velocity;
 		MoveAndSlide();
 	}
@@ -46,7 +49,6 @@ public partial class Player : CharacterBody2D
 	private void _on_player_area_body_entered(Node2D body){
 		if( body is Enemy){
 			Die();
-			GD.Print("Entro");
 		}
 	}
 
