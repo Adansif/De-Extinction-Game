@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c7ofujwod8kvh" path="res://Scenes/Background.tscn" id="1_o41ed"]
 [ext_resource type="Script" path="res://Scripts/Main.cs" id="1_p3mye"]
 [ext_resource type="PackedScene" uid="uid://bvcq4knvc04w7" path="res://Scenes/Player.tscn" id="2_q6t88"]
-[ext_resource type="Script" path="res://Scripts/Camera.cs" id="4_r0vkl"]
+[ext_resource type="PackedScene" uid="uid://d0vrnbpetssg8" path="res://Scenes/Camera.tscn" id="4_5jl1w"]
 
 [node name="Main" type="Node2D" groups=["Main"]]
 position = Vector2(909, 532)
@@ -15,8 +15,7 @@ script = ExtResource("1_p3mye")
 position = Vector2(-747, 451)
 scale = Vector2(6, 6)
 
-[node name="Camera" type="Camera2D" parent="."]
-script = ExtResource("4_r0vkl")
+[node name="Camera" parent="." instance=ExtResource("4_5jl1w")]
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
