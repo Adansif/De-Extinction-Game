@@ -5,7 +5,7 @@ public partial class Player : CharacterBody2D
 {
 	private AnimationPlayer animation;
 	public float Speed = 400.0f;
-	public const float JumpVelocity = -600.0f;
+	public const float JumpVelocity = -800.0f;
 	private bool IsDead {get; set;} = false;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
