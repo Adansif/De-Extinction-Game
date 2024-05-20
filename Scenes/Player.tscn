@@ -16,7 +16,7 @@ _data = {
 "WalkCrouch": ExtResource("2_0wrup")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_feo1f")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
