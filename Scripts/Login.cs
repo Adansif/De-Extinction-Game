@@ -24,7 +24,7 @@ public partial class Login : Control
 		timer = this.GetNode<Timer>("./Timer");
 		errorLabel = this.GetNode<Label>("./ErrorLabel");
 
-		request = this.GetNode<HttpRequest>("HTTPRequest");
+		request = this.GetNode<HttpRequest>("./HTTPRequest");
 
 		loginButton.Pressed += LoginRequest;
 	}
@@ -50,6 +50,7 @@ public partial class Login : Control
 	private async void _on_http_request_request_completed(long result, long responseCode, string[] headers, byte[] body){
 		var json = new Json();
 		var parseResult = json.Parse(body.GetStringFromUtf8());
+
 		if (parseResult != Error.Ok)
 		{
 			GD.Print($"Api request error: {json.GetErrorMessage()} in {body.GetStringFromUtf8()} at line {json.GetErrorLine()}");
