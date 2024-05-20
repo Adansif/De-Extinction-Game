@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://crjutn63quyh4"]
 
 [ext_resource type="Theme" uid="uid://bf1p7pyhtx1pj" path="res://Font/GlobalTheme.tres" id="1_l1mxs"]
-[ext_resource type="Texture2D" uid="uid://dukc28sc4i1vj" path="res://Sprites/UI/Panel.png" id="1_xlcon"]
 [ext_resource type="Script" path="res://Scripts/Selection.cs" id="2_1ehr6"]
 [ext_resource type="PackedScene" uid="uid://cjbx32p6v8tfy" path="res://Scenes/IdleCharacter.tscn" id="2_o5jgm"]
+[ext_resource type="Texture2D" uid="uid://dukc28sc4i1vj" path="res://Sprites/UI/Panels/Panel.png" id="3_qtu1t"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbfc0"]
-texture = ExtResource("1_xlcon")
+texture = ExtResource("3_qtu1t")
 
 [sub_resource type="Animation" id="Animation_bcksa"]
 resource_name = "Entry"

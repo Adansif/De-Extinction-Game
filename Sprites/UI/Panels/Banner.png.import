@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dukc28sc4i1vj"
-path="res://.godot/imported/Panel.png-5eecc4c801256d16b16b5a43bc0319cf.ctex"
+uid="uid://mm6tv4lc8g0d"
+path="res://.godot/imported/Banner.png-d7a4d10b029f27fd39fcea239e0a95ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Panel.png"
-dest_files=["res://.godot/imported/Panel.png-5eecc4c801256d16b16b5a43bc0319cf.ctex"]
+source_file="res://Sprites/UI/Panels/Banner.png"
+dest_files=["res://.godot/imported/Banner.png-d7a4d10b029f27fd39fcea239e0a95ff.ctex"]
 
 [params]
 

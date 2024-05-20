@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://dh1c4sdghphxq"]
 
-[ext_resource type="Texture2D" uid="uid://dukc28sc4i1vj" path="res://Sprites/UI/Panel.png" id="1_4wwas"]
 [ext_resource type="Script" path="res://Scripts/Login.cs" id="1_g015a"]
 [ext_resource type="Theme" uid="uid://bf1p7pyhtx1pj" path="res://Font/GlobalTheme.tres" id="1_r3xsu"]
+[ext_resource type="Texture2D" uid="uid://dukc28sc4i1vj" path="res://Sprites/UI/Panels/Panel.png" id="3_p3jjx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0bi13"]
-texture = ExtResource("1_4wwas")
+texture = ExtResource("3_p3jjx")
 
 [sub_resource type="Animation" id="Animation_glsts"]
 resource_name = "Login"
@@ -121,10 +121,6 @@ libraries = {
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(6, -77)
-scale = Vector2(1.5, 1.5)
 
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
