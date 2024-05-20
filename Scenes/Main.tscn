@@ -13,14 +13,15 @@ script = ExtResource("1_p3mye")
 [node name="Background" parent="." instance=ExtResource("1_o41ed")]
 
 [node name="Player" parent="." instance=ExtResource("2_q6t88")]
+visible = false
 position = Vector2(-747, 451)
 scale = Vector2(6, 6)
 
 [node name="Camera" parent="." instance=ExtResource("4_5jl1w")]
 
+[node name="Control" parent="Camera" instance=ExtResource("5_ndm1r")]
+
 [node name="Timer" type="Timer" parent="."]
 autostart = true
-
-[node name="Control" parent="." instance=ExtResource("5_ndm1r")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
