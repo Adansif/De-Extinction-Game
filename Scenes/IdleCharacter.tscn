@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjbx32p6v8tfy"]
+
+[ext_resource type="Script" path="res://Scripts/IdleCharacter.cs" id="1_kto3b"]
+[ext_resource type="Texture2D" uid="uid://dfw5mkykno848" path="res://Sprites/Character/IdleDoux.png" id="2_f3bf4"]
+
+[sub_resource type="Animation" id="Animation_buiyp"]
+resource_name = "Idle"
+length = 0.9
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_alwyu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g87id"]
+_data = {
+"Idle": SubResource("Animation_buiyp"),
+"RESET": SubResource("Animation_alwyu")
+}
+
+[node name="IdleCharacter" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kto3b")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_f3bf4")
+hframes = 3
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g87id")
+}

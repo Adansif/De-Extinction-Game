@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bf1p7pyhtx1pj"]
+
+[ext_resource type="FontFile" uid="uid://qdpykrgb86ex" path="res://Font/Pixel.ttf" id="1_ekrp4"]
+
+[resource]
+Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("1_ekrp4")
+Label/colors/font_color = Color(1, 0.231373, 0.231373, 1)
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_ekrp4")
+LineEdit/font_sizes/font_size = 32
+LineEdit/fonts/font = ExtResource("1_ekrp4")
+LinkButton/font_sizes/font_size = 32
+LinkButton/fonts/font = ExtResource("1_ekrp4")

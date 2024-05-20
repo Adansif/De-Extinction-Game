@@ -19,9 +19,8 @@ scale = Vector2(6, 6)
 
 [node name="Camera" parent="." instance=ExtResource("4_5jl1w")]
 
-[node name="Control" parent="Camera" instance=ExtResource("5_ndm1r")]
+[node name="Login" parent="Camera" instance=ExtResource("5_ndm1r")]
 
 [node name="Timer" type="Timer" parent="."]
-autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

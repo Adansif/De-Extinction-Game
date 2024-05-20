@@ -1,19 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dh1c4sdghphxq"]
+[gd_scene load_steps=8 format=3 uid="uid://dh1c4sdghphxq"]
 
-[ext_resource type="FontFile" uid="uid://qdpykrgb86ex" path="res://Font/Pixel.ttf" id="1_0aafj"]
 [ext_resource type="Texture2D" uid="uid://dukc28sc4i1vj" path="res://Sprites/UI/Panel.png" id="1_4wwas"]
 [ext_resource type="Script" path="res://Scripts/Login.cs" id="1_g015a"]
-
-[sub_resource type="Theme" id="Theme_axuxq"]
-Button/font_sizes/font_size = 48
-Button/fonts/font = ExtResource("1_0aafj")
-Label/colors/font_color = Color(1, 0.231373, 0.231373, 1)
-Label/font_sizes/font_size = 16
-Label/fonts/font = ExtResource("1_0aafj")
-LineEdit/font_sizes/font_size = 32
-LineEdit/fonts/font = ExtResource("1_0aafj")
-LinkButton/font_sizes/font_size = 32
-LinkButton/fonts/font = ExtResource("1_0aafj")
+[ext_resource type="Theme" uid="uid://bf1p7pyhtx1pj" path="res://Font/GlobalTheme.tres" id="1_r3xsu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0bi13"]
 texture = ExtResource("1_4wwas")
@@ -55,14 +44,14 @@ _data = {
 "RESET": SubResource("Animation_df1q2")
 }
 
-[node name="Control" type="Control"]
+[node name="Login" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_axuxq")
+theme = ExtResource("1_r3xsu")
 script = ExtResource("1_g015a")
 
 [node name="Panel" type="Panel" parent="."]

@@ -10,8 +10,12 @@ public partial class Login : Control
 	private Timer timer;
 	private Label errorLabel;
 	private AnimationPlayer animation;
+
+	private CharacterBody2D player;
 	public override void _Ready()
 	{
+		player = (CharacterBody2D)this.GetTree().GetFirstNodeInGroup("Player");
+		
 		username = this.GetNode<Panel>("./Panel").GetNode<VBoxContainer>("./VBoxContainer").GetNode<LineEdit>("./Username");
 		password = this.GetNode<Panel>("./Panel").GetNode<VBoxContainer>("./VBoxContainer").GetNode<LineEdit>("./Password");
 		loginButton = this.GetNode<Panel>("./Panel").GetNode<VBoxContainer>("./VBoxContainer").GetNode<Button>("./LoginButton");
@@ -60,8 +64,18 @@ public partial class Login : Control
 			CredentialErrors();
 		}else{
 			animation.Play("Login");
-			//TODO: Add selection panel
-			
+			var selectionScript = (Selection)GD.Load<PackedScene>("res://Scenes/Selection.tscn").Instantiate();
+			selectionScript.Position = new Vector2(this.Position.X - 500, this.Position.Y - 300);
+			this.GetParent().AddChild(selectionScript);
+
+			var mainNode = this.GetTree().GetFirstNodeInGroup("Main");
+			var mainScript = (Main)mainNode;
+
+			mainScript.name = this.username.Text;
+			mainScript.password = this.password.Text;
+
+			await ToSignal(animation, "animation_finished");
+			this.GetParent().RemoveChild(this);
 		}
 	}
 
