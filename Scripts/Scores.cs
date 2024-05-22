@@ -5,7 +5,7 @@ public partial class Scores : Control
 {
 	private Label goldScore, silverScore, bronzeScore;
 	private HttpRequest request;
-	private Button start, close;
+	private Button play, exit;
 	private AnimationPlayer animation;
 	private string apiUrl = "http://localhost:8082/api/v1/players/topscores";
 
@@ -14,12 +14,21 @@ public partial class Scores : Control
 	public override void _Ready()
 	{
 		request = this.GetNode<HttpRequest>("./HTTPRequest");
-		goldScore = this.GetNode<Panel>("./Panel").GetNode<VBoxContainer>("./VBoxContainer").GetNode<TextureRect>("Gold").GetNode<Label>("Score");
-		silverScore = this.GetNode<Panel>("./Panel").GetNode<VBoxContainer>("./VBoxContainer").GetNode<TextureRect>("Silver").GetNode<Label>("Score");
-		bronzeScore = this.GetNode<Panel>("./Panel").GetNode<VBoxContainer>("./VBoxContainer").GetNode<TextureRect>("Bronze").GetNode<Label>("Score");
+
+		var verticalContainer = this.GetNode<Panel>("./Panel").GetNode<VBoxContainer>("./VBoxContainer");
+
+		goldScore = verticalContainer.GetNode<TextureRect>("Gold").GetNode<Label>("Score");
+		silverScore = verticalContainer.GetNode<TextureRect>("Silver").GetNode<Label>("Score");
+		bronzeScore = verticalContainer.GetNode<TextureRect>("Bronze").GetNode<Label>("Score");
 
 		animation = this.GetNode<AnimationPlayer>("./Animation");
 		animation.Play("Entry");
+
+		play = verticalContainer.GetNode<HBoxContainer>("./HBoxContainer").GetNode<Button>("./Play");
+		exit = verticalContainer.GetNode<HBoxContainer>("./HBoxContainer").GetNode<Button>("./Exit");
+
+		play.Pressed += PlayNewGame;
+		exit.Pressed += ExitGame;
 
 		ScoresRequest();
 
@@ -59,5 +68,20 @@ public partial class Scores : Control
 		var bronzeDitionary = (Godot.Collections.Dictionary<string, Variant>)arrayData[2];
 		bronzeScore.Text = "Name: " + bronzeDitionary["name"] + "     Score: " + bronzeDitionary["score"];
 
+	}
+
+	private void ExitGame(){
+		this.GetTree().Quit();
+	}
+
+	private async void PlayNewGame(){
+		animation.Play("Leave");
+
+		var selectionScript = (Selection)GD.Load<PackedScene>("res://Scenes/Selection.tscn").Instantiate();
+		selectionScript.Position = new Vector2(this.Position.X - 500, this.Position.Y - 300);
+		this.GetTree().GetFirstNodeInGroup("Main").GetNode<Camera2D>("./Camera").AddChild(selectionScript);
+
+		await ToSignal(animation, "animation_finished");
+		this.GetParent().RemoveChild(this);
 	}
 }
