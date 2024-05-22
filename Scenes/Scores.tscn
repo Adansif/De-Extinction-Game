@@ -127,6 +127,7 @@ size_flags_horizontal = 4
 texture = ExtResource("4_qm8sv")
 
 [node name="TrophieLeft" type="TextureRect" parent="Panel/VBoxContainer/Silver"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 39.0
 offset_right = 44.0
@@ -134,6 +135,7 @@ offset_bottom = 79.0
 texture = ExtResource("6_3li3l")
 
 [node name="TrophieRight" type="TextureRect" parent="Panel/VBoxContainer/Silver"]
+layout_mode = 0
 offset_left = 244.0
 offset_top = 39.0
 offset_right = 284.0
@@ -141,6 +143,7 @@ offset_bottom = 79.0
 texture = ExtResource("6_3li3l")
 
 [node name="Score" type="Label" parent="Panel/VBoxContainer/Silver"]
+layout_mode = 0
 offset_left = 47.0
 offset_top = 33.0
 offset_right = 327.0
@@ -159,6 +162,7 @@ size_flags_horizontal = 4
 texture = ExtResource("4_qm8sv")
 
 [node name="TrophieLeft" type="TextureRect" parent="Panel/VBoxContainer/Bronze"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 39.0
 offset_right = 44.0
@@ -166,6 +170,7 @@ offset_bottom = 79.0
 texture = ExtResource("7_tekt2")
 
 [node name="TrophieRight" type="TextureRect" parent="Panel/VBoxContainer/Bronze"]
+layout_mode = 0
 offset_left = 244.0
 offset_top = 39.0
 offset_right = 284.0
@@ -173,6 +178,7 @@ offset_bottom = 79.0
 texture = ExtResource("7_tekt2")
 
 [node name="Score" type="Label" parent="Panel/VBoxContainer/Bronze"]
+layout_mode = 0
 offset_left = 47.0
 offset_top = 33.0
 offset_right = 326.0
