@@ -79,6 +79,9 @@ public partial class Player : CharacterBody2D
 	private async void _on_http_request_request_completed(long result, long responseCode, string[] headers, byte[] body){
 		IsDead = true;
 
+		((Main)this.GetTree().GetFirstNodeInGroup("Main")).isPlaying = false;
+		this.points = 0;
+
 		animation.Play("Hit");
 		await ToSignal(animation, "animation_finished");
 
