@@ -11,22 +11,6 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0bi13"]
 texture = ExtResource("3_s7qx2")
 
-[sub_resource type="Animation" id="Animation_glsts"]
-resource_name = "Login"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-278, -333), Vector2(-278, -262), Vector2(-278, -1709)]
-}
-
 [sub_resource type="Animation" id="Animation_df1q2"]
 length = 0.001
 tracks/0/type = "value"
@@ -42,9 +26,25 @@ tracks/0/keys = {
 "values": [Vector2(-278, -333)]
 }
 
+[sub_resource type="Animation" id="Animation_glsts"]
+resource_name = "Entry"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-278, -1299), Vector2(-278, -306), Vector2(-278, -370)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_etay5"]
 _data = {
-"Login": SubResource("Animation_glsts"),
+"Entry": SubResource("Animation_glsts"),
 "RESET": SubResource("Animation_df1q2")
 }
 
@@ -59,10 +59,10 @@ theme = ExtResource("1_0o8rf")
 script = ExtResource("2_wl4nv")
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 0
+layout_mode = 1
 offset_left = -278.0
 offset_top = -333.0
-offset_right = 84.0
+offset_right = 84.0002
 offset_bottom = 145.0
 scale = Vector2(1.5, 1.5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_0bi13")
@@ -207,11 +207,9 @@ text = "Exit"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
-[node name="Animations" type="AnimationPlayer" parent="."]
+[node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_etay5")
 }
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

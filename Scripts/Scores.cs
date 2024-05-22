@@ -6,6 +6,7 @@ public partial class Scores : Control
 	private Label goldScore, silverScore, bronzeScore;
 	private HttpRequest request;
 	private Button start, close;
+	private AnimationPlayer animation;
 	private string apiUrl = "http://localhost:8082/api/v1/players/topscores";
 
 	private Godot.Collections.Dictionary<string, Variant> topScores;
@@ -16,6 +17,9 @@ public partial class Scores : Control
 		goldScore = this.GetNode<Panel>("./Panel").GetNode<VBoxContainer>("./VBoxContainer").GetNode<TextureRect>("Gold").GetNode<Label>("Score");
 		silverScore = this.GetNode<Panel>("./Panel").GetNode<VBoxContainer>("./VBoxContainer").GetNode<TextureRect>("Silver").GetNode<Label>("Score");
 		bronzeScore = this.GetNode<Panel>("./Panel").GetNode<VBoxContainer>("./VBoxContainer").GetNode<TextureRect>("Bronze").GetNode<Label>("Score");
+
+		animation = this.GetNode<AnimationPlayer>("./Animation");
+		animation.Play("Entry");
 
 		ScoresRequest();
 

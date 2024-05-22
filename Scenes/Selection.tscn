@@ -79,10 +79,10 @@ anchor_left = 0.325
 anchor_top = 0.306
 anchor_right = 0.325
 anchor_bottom = 0.306
-offset_left = -1635.9
-offset_top = -174.682
-offset_right = -932.9
-offset_bottom = 174.32
+offset_left = -1125.0
+offset_top = 161.0
+offset_right = -422.0
+offset_bottom = 510.002
 theme_override_styles/panel = SubResource("StyleBoxTexture_tbfc0")
 
 [node name="Doux" parent="Panel" instance=ExtResource("2_o5jgm")]
@@ -215,7 +215,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 16
-text = "Mort"
+text = "Vita"
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 2
