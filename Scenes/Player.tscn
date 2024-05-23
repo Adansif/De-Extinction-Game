@@ -17,6 +17,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 1
 script = ExtResource("1_feo1f")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]

@@ -85,8 +85,8 @@ public partial class Player : CharacterBody2D
 		animation.Play("Hit");
 		await ToSignal(animation, "animation_finished");
 
-		this.GetParent().GetNode<Camera2D>("./Camera").AddChild(GD.Load<PackedScene>("res://Scenes/Scores.tscn").Instantiate());
 		var mainScript = (Main)this.GetParent();
+		mainScript.GetNode<Camera2D>("./Camera").AddChild(GD.Load<PackedScene>("res://Scenes/Scores.tscn").Instantiate());
 
 		mainScript.timer.Stop();
 		var enemies = this.GetTree().GetNodesInGroup("Enemy");

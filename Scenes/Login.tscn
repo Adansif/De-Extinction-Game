@@ -73,14 +73,14 @@ theme_override_constants/separation = 50
 alignment = 1
 
 [node name="Username" type="LineEdit" parent="Panel/VBoxContainer"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 placeholder_text = "Username"
 alignment = 1
 
 [node name="Password" type="LineEdit" parent="Panel/VBoxContainer"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 placeholder_text = "Password"
@@ -104,13 +104,14 @@ text = "Register and buy the game here!"
 [node name="ErrorLabel" type="Label" parent="."]
 visible = false
 layout_mode = 2
-offset_left = -293.0
-offset_top = 143.0
-offset_bottom = 214.0
+offset_left = -287.0
+offset_top = 173.0
+offset_right = 6.0
+offset_bottom = 244.0
 scale = Vector2(2, 2)
 size_flags_horizontal = 4
-text = "If you already bought the game, 
-please check your credentials"
+text = "If you already bought the game 
+please check your credentials."
 horizontal_alignment = 1
 
 [node name="Animations" type="AnimationPlayer" parent="."]
