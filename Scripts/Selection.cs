@@ -5,16 +5,17 @@ public partial class Selection : Control
 {
 	private Button douxButton, mortButton, vitaButton, tardButton, startButton;
 	private AnimationPlayer animation;
-	private string texturePath = "res://Sprites/Character/Doux.png";
+	private string texturePath = Data.defaultTexture;
 	// Called when the node enters the scene tree for the first time.
 	public async override void _Ready()
 	{
 		startButton = this.GetNode<Panel>("./Panel").GetNode<Button>("./Start");
 
-		douxButton = this.GetNode<Panel>("./Panel").GetNode<Control>("./Doux").GetNode<Button>("./DouxButton");
-		mortButton = this.GetNode<Panel>("./Panel").GetNode<Control>("./Mort").GetNode<Button>("./MortButton");
-		tardButton = this.GetNode<Panel>("./Panel").GetNode<Control>("./Tard").GetNode<Button>("./TardButton");
-		vitaButton = this.GetNode<Panel>("./Panel").GetNode<Control>("./Vita").GetNode<Button>("./VitaButton");
+		var panel = this.GetNode<Panel>("./Panel");
+		douxButton = panel.GetNode<Control>("./Doux").GetNode<Button>("./DouxButton");
+		mortButton = panel.GetNode<Control>("./Mort").GetNode<Button>("./MortButton");
+		tardButton = panel.GetNode<Control>("./Tard").GetNode<Button>("./TardButton");
+		vitaButton = panel.GetNode<Control>("./Vita").GetNode<Button>("./VitaButton");
 
 		animation = this.GetNode<AnimationPlayer>("./Animation");
 
@@ -36,7 +37,7 @@ public partial class Selection : Control
 
 	private void ChangeTexture(Button button){
 		String buttonName = button.Name;
-		texturePath = "res://Sprites/Character/" + buttonName.Substring(0,4) + ".png";
+		texturePath = Data.texturePath + buttonName.Substring(0,4) + ".png";
 		GD.Print(texturePath);
 	}
 
@@ -53,6 +54,7 @@ public partial class Selection : Control
 		await ToSignal(animation, "animation_finished");
 		mainScript.timer.Start();
 		mainScript.isPlaying = true;
+
 		this.GetParent().RemoveChild(this);
 	}
 }

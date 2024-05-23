@@ -7,8 +7,6 @@ public partial class Scores : Control
 	private HttpRequest request;
 	private Button play, exit;
 	private AnimationPlayer animation;
-	private string apiUrl = "http://localhost:8082/api/v1/players/topscores";
-
 	private Godot.Collections.Dictionary<string, Variant> topScores;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -24,8 +22,9 @@ public partial class Scores : Control
 		animation = this.GetNode<AnimationPlayer>("./Animation");
 		animation.Play("Entry");
 
-		play = verticalContainer.GetNode<HBoxContainer>("./HBoxContainer").GetNode<Button>("./Play");
-		exit = verticalContainer.GetNode<HBoxContainer>("./HBoxContainer").GetNode<Button>("./Exit");
+		var buttonContainer = verticalContainer.GetNode<HBoxContainer>("./HBoxContainer");
+		play = buttonContainer.GetNode<Button>("./Play");
+		exit = buttonContainer.GetNode<Button>("./Exit");
 
 		play.Pressed += PlayNewGame;
 		exit.Pressed += ExitGame;
@@ -40,10 +39,7 @@ public partial class Scores : Control
 	}
 
 	private void ScoresRequest(){
-
-		string[] headers = new string[] { "Content-Type: application/json" };
-
-		request.Request(apiUrl, headers, HttpClient.Method.Get);
+		request.Request(Data.apiUrls["scoreGet"], Data.apiHeader, HttpClient.Method.Get);
 	}
 
 	private void _on_http_request_request_completed(long result, long responseCode, string[] headers, byte[] body){
@@ -77,7 +73,7 @@ public partial class Scores : Control
 	private async void PlayNewGame(){
 		animation.Play("Leave");
 
-		var selectionScript = (Selection)GD.Load<PackedScene>("res://Scenes/Selection.tscn").Instantiate();
+		var selectionScript = (Selection)GD.Load<PackedScene>(Data.scenesUrls["selection"]).Instantiate();
 		selectionScript.Position = new Vector2(this.Position.X - 500, this.Position.Y - 300);
 		this.GetTree().GetFirstNodeInGroup("Main").GetNode<Camera2D>("./Camera").AddChild(selectionScript);
 

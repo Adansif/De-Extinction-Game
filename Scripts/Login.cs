@@ -6,7 +6,6 @@ public partial class Login : Control
 	private HttpRequest request;
 	private LineEdit username, password;
 	private Button loginButton;
-	private String apiUrl = "http://localhost:8082/api/v1/players/login";
 	private Timer timer;
 	private Label errorLabel;
 	private AnimationPlayer animation;
@@ -42,9 +41,7 @@ public partial class Login : Control
         	{ "password", password.Text }
     	});
 
-		string[] headers = new string[] { "Content-Type: application/json" };
-
-		request.Request(apiUrl, headers, HttpClient.Method.Post, body);
+		request.Request(Data.apiUrls["login"], Data.apiHeader, HttpClient.Method.Post, body);
 	}
 
 	private async void _on_http_request_request_completed(long result, long responseCode, string[] headers, byte[] body){
@@ -58,14 +55,14 @@ public partial class Login : Control
 			return;
 		}
 
-		var apiData = new Godot.Collections.Dictionary<string, Variant>((Godot.Collections.Dictionary)json.Data);
+		var apiReturnedData = new Godot.Collections.Dictionary<string, Variant>((Godot.Collections.Dictionary)json.Data);
 
-		if((String)apiData["name"] != username.Text || !(Boolean)apiData["password"] || !(Boolean)apiData["player"]){
+		if((String)apiReturnedData["name"] != username.Text || !(Boolean)apiReturnedData["password"] || !(Boolean)apiReturnedData["player"]){
 			GD.Print("Nada de nada");
 			CredentialErrors();
 		}else{
 			animation.Play("Login");
-			var selectionScript = (Selection)GD.Load<PackedScene>("res://Scenes/Selection.tscn").Instantiate();
+			var selectionScript = (Selection)GD.Load<PackedScene>(Data.scenesUrls["selection"]).Instantiate();
 			selectionScript.Position = new Vector2(this.Position.X - 500, this.Position.Y - 300);
 			this.GetParent().AddChild(selectionScript);
 

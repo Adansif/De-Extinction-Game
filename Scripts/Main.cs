@@ -26,14 +26,14 @@ public partial class Main : Node2D
 		
 		var playerScript = (Player)this.GetTree().GetFirstNodeInGroup("Player");
 		if(playerScript.Speed < 6000){
-			playerScript.Speed += 10;
+			playerScript.Speed += 30;
 		}
 
 		timer.WaitTime = random.Next(1, 4);
 	}
 
 	private void SpawnEnemy(){
-		var enemy = GD.Load<PackedScene>("res://Scenes/Enemy.tscn").Instantiate();
+		var enemy = GD.Load<PackedScene>(Data.scenesUrls["enemy"]).Instantiate();
 		var enemyScript = (Enemy)enemy;
 		enemyScript.height = random.Next(100, 451);
 		enemyScript.Scale = new Godot.Vector2(3, 3);

@@ -12,8 +12,6 @@ public partial class Enemy : StaticBody2D
 		main = this.GetParent();
 		player = main.GetNode<CharacterBody2D>("./Player");
 		this.Position = new Vector2(player.Position.X + 1600, height);
-		GD.Print("Mi altura es de: ", this.Position.Y);
-		GD.Print("La x del jugador es:", player.Position.X, " y la x del enemigo es: ", this.Position.X);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
