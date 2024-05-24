@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://c7ofujwod8kvh"]
 
-[ext_resource type="Texture2D" uid="uid://emhcx6demaya" path="res://Sprites/Background/0_ Background.png" id="1_ak1r6"]
-[ext_resource type="Texture2D" uid="uid://hme88k764svm" path="res://Sprites/Background/1_ Trees Background.png" id="2_wb2li"]
-[ext_resource type="Texture2D" uid="uid://6ycluvqi550e" path="res://Sprites/Background/2_ Trees.png" id="3_8v0g6"]
-[ext_resource type="Texture2D" uid="uid://bdg8u2qphvc4g" path="res://Sprites/Background/3_ Trees.png" id="4_bxmi3"]
-[ext_resource type="Texture2D" uid="uid://befsuvt0i81f0" path="res://Sprites/Background/4_ Trees.png" id="5_3w18c"]
-[ext_resource type="Texture2D" uid="uid://bfaxyfn4y42xm" path="res://Sprites/Background/5_ Floor Platform.png" id="6_voggm"]
+[ext_resource type="Texture2D" uid="uid://emhcx6demaya" path="res://Assets/Sprites/Background/0_ Background.png" id="1_ak1r6"]
+[ext_resource type="Texture2D" uid="uid://hme88k764svm" path="res://Assets/Sprites/Background/1_ Trees Background.png" id="2_wb2li"]
+[ext_resource type="Texture2D" uid="uid://6ycluvqi550e" path="res://Assets/Sprites/Background/2_ Trees.png" id="3_8v0g6"]
+[ext_resource type="Texture2D" uid="uid://bdg8u2qphvc4g" path="res://Assets/Sprites/Background/3_ Trees.png" id="4_bxmi3"]
+[ext_resource type="Texture2D" uid="uid://befsuvt0i81f0" path="res://Assets/Sprites/Background/4_ Trees.png" id="5_3w18c"]
+[ext_resource type="Texture2D" uid="uid://bfaxyfn4y42xm" path="res://Assets/Sprites/Background/5_ Floor Platform.png" id="6_voggm"]
 [ext_resource type="Script" path="res://Scripts/GroundBody.cs" id="7_rvci4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_norv3"]

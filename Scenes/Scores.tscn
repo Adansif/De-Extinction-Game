@@ -1,15 +1,15 @@
 [gd_scene load_steps=13 format=3 uid="uid://csqfh13qewcj1"]
 
-[ext_resource type="Theme" uid="uid://bf1p7pyhtx1pj" path="res://Font/GlobalTheme.tres" id="1_0o8rf"]
+[ext_resource type="Theme" uid="uid://bf1p7pyhtx1pj" path="res://Assets/Font/GlobalTheme.tres" id="1_llp5i"]
 [ext_resource type="Script" path="res://Scripts/Scores.cs" id="2_wl4nv"]
-[ext_resource type="Texture2D" uid="uid://dukc28sc4i1vj" path="res://Sprites/UI/Panels/Panel.png" id="3_s7qx2"]
-[ext_resource type="Texture2D" uid="uid://mm6tv4lc8g0d" path="res://Sprites/UI/Panels/Banner.png" id="4_qm8sv"]
-[ext_resource type="Texture2D" uid="uid://n0jqohjtnsyb" path="res://Sprites/UI/Trophies/Gold.png" id="5_jw2pq"]
-[ext_resource type="Texture2D" uid="uid://dtdmmgq60ujb" path="res://Sprites/UI/Trophies/Silver.png" id="6_3li3l"]
-[ext_resource type="Texture2D" uid="uid://clonx6sxhyge4" path="res://Sprites/UI/Trophies/Bronze.png" id="7_tekt2"]
+[ext_resource type="Texture2D" uid="uid://dukc28sc4i1vj" path="res://Assets/Sprites/UI/Panels/Panel.png" id="3_wuc6k"]
+[ext_resource type="Texture2D" uid="uid://mm6tv4lc8g0d" path="res://Assets/Sprites/UI/Panels/Banner.png" id="4_xi4fl"]
+[ext_resource type="Texture2D" uid="uid://n0jqohjtnsyb" path="res://Assets/Sprites/UI/Trophies/Gold.png" id="5_ujaxe"]
+[ext_resource type="Texture2D" uid="uid://dtdmmgq60ujb" path="res://Assets/Sprites/UI/Trophies/Silver.png" id="6_coql4"]
+[ext_resource type="Texture2D" uid="uid://clonx6sxhyge4" path="res://Assets/Sprites/UI/Trophies/Bronze.png" id="7_3gioh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0bi13"]
-texture = ExtResource("3_s7qx2")
+texture = ExtResource("3_wuc6k")
 
 [sub_resource type="Animation" id="Animation_glsts"]
 resource_name = "Entry"
@@ -72,7 +72,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_0o8rf")
+theme = ExtResource("1_llp5i")
 script = ExtResource("2_wl4nv")
 
 [node name="Panel" type="Panel" parent="."]
@@ -104,7 +104,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(288, 96)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("4_qm8sv")
+texture = ExtResource("4_xi4fl")
 
 [node name="TrophieLeft" type="TextureRect" parent="Panel/VBoxContainer/Gold"]
 layout_mode = 0
@@ -112,7 +112,7 @@ offset_left = 4.0
 offset_top = 39.0
 offset_right = 44.0
 offset_bottom = 79.0
-texture = ExtResource("5_jw2pq")
+texture = ExtResource("5_ujaxe")
 
 [node name="TrophieRight" type="TextureRect" parent="Panel/VBoxContainer/Gold"]
 layout_mode = 0
@@ -120,7 +120,7 @@ offset_left = 244.0
 offset_top = 39.0
 offset_right = 284.0
 offset_bottom = 79.0
-texture = ExtResource("5_jw2pq")
+texture = ExtResource("5_ujaxe")
 
 [node name="Score" type="Label" parent="Panel/VBoxContainer/Gold"]
 texture_filter = 1
@@ -141,7 +141,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(288, 96)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("4_qm8sv")
+texture = ExtResource("4_xi4fl")
 
 [node name="TrophieLeft" type="TextureRect" parent="Panel/VBoxContainer/Silver"]
 layout_mode = 0
@@ -149,7 +149,7 @@ offset_left = 4.0
 offset_top = 39.0
 offset_right = 44.0
 offset_bottom = 79.0
-texture = ExtResource("6_3li3l")
+texture = ExtResource("6_coql4")
 
 [node name="TrophieRight" type="TextureRect" parent="Panel/VBoxContainer/Silver"]
 layout_mode = 0
@@ -157,7 +157,7 @@ offset_left = 244.0
 offset_top = 39.0
 offset_right = 284.0
 offset_bottom = 79.0
-texture = ExtResource("6_3li3l")
+texture = ExtResource("6_coql4")
 
 [node name="Score" type="Label" parent="Panel/VBoxContainer/Silver"]
 layout_mode = 0
@@ -176,7 +176,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(288, 96)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("4_qm8sv")
+texture = ExtResource("4_xi4fl")
 
 [node name="TrophieLeft" type="TextureRect" parent="Panel/VBoxContainer/Bronze"]
 layout_mode = 0
@@ -184,7 +184,7 @@ offset_left = 4.0
 offset_top = 39.0
 offset_right = 44.0
 offset_bottom = 79.0
-texture = ExtResource("7_tekt2")
+texture = ExtResource("7_3gioh")
 
 [node name="TrophieRight" type="TextureRect" parent="Panel/VBoxContainer/Bronze"]
 layout_mode = 0
@@ -192,7 +192,7 @@ offset_left = 244.0
 offset_top = 39.0
 offset_right = 284.0
 offset_bottom = 79.0
-texture = ExtResource("7_tekt2")
+texture = ExtResource("7_3gioh")
 
 [node name="Score" type="Label" parent="Panel/VBoxContainer/Bronze"]
 layout_mode = 0

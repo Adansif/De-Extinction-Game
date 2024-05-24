@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://dh1c4sdghphxq"]
 
 [ext_resource type="Script" path="res://Scripts/Login.cs" id="1_g015a"]
-[ext_resource type="Theme" uid="uid://bf1p7pyhtx1pj" path="res://Font/GlobalTheme.tres" id="1_r3xsu"]
-[ext_resource type="Texture2D" uid="uid://dukc28sc4i1vj" path="res://Sprites/UI/Panels/Panel.png" id="3_p3jjx"]
+[ext_resource type="Theme" uid="uid://bf1p7pyhtx1pj" path="res://Assets/Font/GlobalTheme.tres" id="1_xb6d7"]
+[ext_resource type="Texture2D" uid="uid://dukc28sc4i1vj" path="res://Assets/Sprites/UI/Panels/Panel.png" id="3_pgg80"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0bi13"]
-texture = ExtResource("3_p3jjx")
+texture = ExtResource("3_pgg80")
 
 [sub_resource type="Animation" id="Animation_glsts"]
 resource_name = "Login"
@@ -51,7 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_r3xsu")
+theme = ExtResource("1_xb6d7")
 script = ExtResource("1_g015a")
 
 [node name="Panel" type="Panel" parent="."]

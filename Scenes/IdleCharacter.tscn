@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cjbx32p6v8tfy"]
 
 [ext_resource type="Script" path="res://Scripts/IdleCharacter.cs" id="1_kto3b"]
-[ext_resource type="Texture2D" uid="uid://dfw5mkykno848" path="res://Sprites/Character/IdleDoux.png" id="2_f3bf4"]
+[ext_resource type="Texture2D" uid="uid://dfw5mkykno848" path="res://Assets/Sprites/Character/IdleDoux.png" id="2_f3bf4"]
 
 [sub_resource type="Animation" id="Animation_buiyp"]
 resource_name = "Idle"

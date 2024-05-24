@@ -7,6 +7,7 @@ public partial class Player : CharacterBody2D
     private Sprite2D sprite;
     public String spriteTexture;
     private HttpRequest request;
+    private AudioStreamPlayer2D jumpEffect;
     private float defaultSpeed = 400.0f;
     public float Speed;
     public float points = 0;
@@ -25,6 +26,8 @@ public partial class Player : CharacterBody2D
         request = this.GetNode<HttpRequest>("./HTTPRequest");
         animation = GetNode<AnimationPlayer>("./PlayerAnimation");
         sprite = this.GetNode<Sprite2D>("./PlayerSprite");
+
+        jumpEffect = this.GetNode<AudioStreamPlayer2D>("./Jump");
 
         Speed = defaultSpeed;
     }
@@ -50,8 +53,10 @@ public partial class Player : CharacterBody2D
             velocity.Y += gravity * (float)delta;
 
         // Handle Jump.
-        if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+        if (Input.IsActionJustPressed("ui_accept") && IsOnFloor()){
             velocity.Y = JumpVelocity;
+            jumpEffect.Play();
+        }
 
         Vector2 direction = new Vector2(1, 0);
 
