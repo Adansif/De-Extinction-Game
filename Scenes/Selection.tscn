@@ -1,0 +1,252 @@
+[gd_scene load_steps=10 format=3 uid="uid://crjutn63quyh4"]
+
+[ext_resource type="Theme" uid="uid://bf1p7pyhtx1pj" path="res://Assets/Font/GlobalTheme.tres" id="1_req5t"]
+[ext_resource type="Script" path="res://Scripts/Selection.cs" id="2_1ehr6"]
+[ext_resource type="PackedScene" uid="uid://cjbx32p6v8tfy" path="res://Scenes/IdleCharacter.tscn" id="2_o5jgm"]
+[ext_resource type="Texture2D" uid="uid://dukc28sc4i1vj" path="res://Assets/Sprites/UI/Panels/Panel.png" id="3_j04e4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbfc0"]
+texture = ExtResource("3_j04e4")
+
+[sub_resource type="Animation" id="Animation_bcksa"]
+resource_name = "Entry"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1125, 161), Vector2(211, 161), Vector2(161, 161)]
+}
+
+[sub_resource type="Animation" id="Animation_r8sja"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1125, 161)]
+}
+
+[sub_resource type="Animation" id="Animation_e6kwf"]
+resource_name = "Start"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(161, 161), Vector2(161, 111), Vector2(161, 1389)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bemqk"]
+_data = {
+"Entry": SubResource("Animation_bcksa"),
+"RESET": SubResource("Animation_r8sja"),
+"Start": SubResource("Animation_e6kwf")
+}
+
+[node name="Selection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_req5t")
+script = ExtResource("2_1ehr6")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -1125.0
+offset_top = 161.0
+offset_right = -422.0
+offset_bottom = 510.002
+theme_override_styles/panel = SubResource("StyleBoxTexture_tbfc0")
+
+[node name="Doux" parent="Panel" instance=ExtResource("2_o5jgm")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -227.5
+offset_top = -34.5
+offset_right = -227.5
+offset_bottom = -34.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texturePath = "res://Assets/Sprites/Character/IdleDoux.png"
+
+[node name="DouxButton" type="Button" parent="Panel/Doux"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = 12.0
+offset_right = 22.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 16
+text = "Doux"
+
+[node name="Mort" parent="Panel" instance=ExtResource("2_o5jgm")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.4999
+offset_top = -33.1667
+offset_right = -77.4999
+offset_bottom = -33.1667
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texturePath = "res://Assets/Sprites/Character/IdleMort.png"
+
+[node name="MortButton" type="Button" parent="Panel/Mort"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = 12.0
+offset_right = 22.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 16
+text = "Mort"
+
+[node name="Tard" parent="Panel" instance=ExtResource("2_o5jgm")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 70.5
+offset_top = -35.1667
+offset_right = 70.5
+offset_bottom = -35.1667
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texturePath = "res://Assets/Sprites/Character/IdleTard.png"
+
+[node name="TardButton" type="Button" parent="Panel/Tard"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = 12.0
+offset_right = 22.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 16
+text = "Tard"
+
+[node name="Vita" parent="Panel" instance=ExtResource("2_o5jgm")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 222.5
+offset_top = -33.8333
+offset_right = 222.5
+offset_bottom = -33.8333
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texturePath = "res://Assets/Sprites/Character/IdleVita.png"
+
+[node name="VitaButton" type="Button" parent="Panel/Vita"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = 12.0
+offset_right = 22.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 16
+text = "Vita"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 13.0
+offset_top = 28.0
+offset_right = 695.0
+offset_bottom = 82.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Choose your dino!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.5
+offset_top = -86.0
+offset_right = -17.5
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3, 3)
+theme_override_font_sizes/font_size = 16
+text = "Start!
+"
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bemqk")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]

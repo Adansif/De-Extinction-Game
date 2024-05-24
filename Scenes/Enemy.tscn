@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c62fh7wshoyx3"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_jd6fv"]
+[ext_resource type="Texture2D" uid="uid://dey3icccrmxy5" path="res://Assets/Sprites/Enemies/Pillar.png" id="2_0prgt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t17qg"]
+size = Vector2(37, 37)
+
+[node name="Enemy" type="StaticBody2D" groups=["Enemy"]]
+collision_layer = 2
+script = ExtResource("1_jd6fv")
+
+[node name="EnemyCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_t17qg")
+
+[node name="EnemySprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_0prgt")
+hframes = 5
+frame = 4
+
+[node name="EnemyArea" type="Area2D" parent="."]
+
+[node name="AreaCollision" type="CollisionShape2D" parent="EnemyArea"]
+visible = false
+shape = SubResource("RectangleShape2D_t17qg")

@@ -1,0 +1,238 @@
+[gd_scene load_steps=13 format=3 uid="uid://csqfh13qewcj1"]
+
+[ext_resource type="Theme" uid="uid://bf1p7pyhtx1pj" path="res://Assets/Font/GlobalTheme.tres" id="1_llp5i"]
+[ext_resource type="Script" path="res://Scripts/Scores.cs" id="2_wl4nv"]
+[ext_resource type="Texture2D" uid="uid://dukc28sc4i1vj" path="res://Assets/Sprites/UI/Panels/Panel.png" id="3_wuc6k"]
+[ext_resource type="Texture2D" uid="uid://mm6tv4lc8g0d" path="res://Assets/Sprites/UI/Panels/Banner.png" id="4_xi4fl"]
+[ext_resource type="Texture2D" uid="uid://n0jqohjtnsyb" path="res://Assets/Sprites/UI/Trophies/Gold.png" id="5_ujaxe"]
+[ext_resource type="Texture2D" uid="uid://dtdmmgq60ujb" path="res://Assets/Sprites/UI/Trophies/Silver.png" id="6_coql4"]
+[ext_resource type="Texture2D" uid="uid://clonx6sxhyge4" path="res://Assets/Sprites/UI/Trophies/Bronze.png" id="7_3gioh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0bi13"]
+texture = ExtResource("3_wuc6k")
+
+[sub_resource type="Animation" id="Animation_glsts"]
+resource_name = "Entry"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-278, -1299), Vector2(-278, -306), Vector2(-278, -370)]
+}
+
+[sub_resource type="Animation" id="Animation_aidy7"]
+resource_name = "Leave"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-278, -370), Vector2(-278, -306), Vector2(-278, -1299)]
+}
+
+[sub_resource type="Animation" id="Animation_df1q2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-278, -333)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_etay5"]
+_data = {
+"Entry": SubResource("Animation_glsts"),
+"Leave": SubResource("Animation_aidy7"),
+"RESET": SubResource("Animation_df1q2")
+}
+
+[node name="Scores" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_llp5i")
+script = ExtResource("2_wl4nv")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+offset_left = -278.0
+offset_top = -333.0
+offset_right = 84.0002
+offset_bottom = 145.0
+scale = Vector2(1.5, 1.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_0bi13")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 1.33334
+offset_top = -5.33334
+offset_right = 361.333
+offset_bottom = 460.667
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="TopScores" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Top 3 scores!"
+horizontal_alignment = 1
+
+[node name="Gold" type="TextureRect" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(288, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_xi4fl")
+
+[node name="TrophieLeft" type="TextureRect" parent="Panel/VBoxContainer/Gold"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 39.0
+offset_right = 44.0
+offset_bottom = 79.0
+texture = ExtResource("5_ujaxe")
+
+[node name="TrophieRight" type="TextureRect" parent="Panel/VBoxContainer/Gold"]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 39.0
+offset_right = 284.0
+offset_bottom = 79.0
+texture = ExtResource("5_ujaxe")
+
+[node name="Score" type="Label" parent="Panel/VBoxContainer/Gold"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 47.0
+offset_top = 33.0
+offset_right = 327.0
+offset_bottom = 71.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Name:             
+Score: "
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 2
+
+[node name="Silver" type="TextureRect" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(288, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_xi4fl")
+
+[node name="TrophieLeft" type="TextureRect" parent="Panel/VBoxContainer/Silver"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 39.0
+offset_right = 44.0
+offset_bottom = 79.0
+texture = ExtResource("6_coql4")
+
+[node name="TrophieRight" type="TextureRect" parent="Panel/VBoxContainer/Silver"]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 39.0
+offset_right = 284.0
+offset_bottom = 79.0
+texture = ExtResource("6_coql4")
+
+[node name="Score" type="Label" parent="Panel/VBoxContainer/Silver"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 33.0
+offset_right = 327.0
+offset_bottom = 71.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Name:
+Score: "
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 2
+
+[node name="Bronze" type="TextureRect" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(288, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_xi4fl")
+
+[node name="TrophieLeft" type="TextureRect" parent="Panel/VBoxContainer/Bronze"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 39.0
+offset_right = 44.0
+offset_bottom = 79.0
+texture = ExtResource("7_3gioh")
+
+[node name="TrophieRight" type="TextureRect" parent="Panel/VBoxContainer/Bronze"]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 39.0
+offset_right = 284.0
+offset_bottom = 79.0
+texture = ExtResource("7_3gioh")
+
+[node name="Score" type="Label" parent="Panel/VBoxContainer/Bronze"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 33.0
+offset_right = 326.0
+offset_bottom = 71.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Name:
+Score: "
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 75)
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Play!"
+
+[node name="Exit" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 75)
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Exit"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_etay5")
+}
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

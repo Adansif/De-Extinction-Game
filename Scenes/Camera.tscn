@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0vrnbpetssg8"]
+
+[ext_resource type="Script" path="res://Scripts/Camera.cs" id="1_e03mf"]
+
+[node name="Camera" type="Camera2D"]
+script = ExtResource("1_e03mf")
+
+[node name="Score" type="Label" parent="."]
+offset_left = 462.0
+offset_top = -509.0
+offset_right = 502.0
+offset_bottom = -486.0
+theme_override_font_sizes/font_size = 32
+text = "Score: "
+
+[node name="Points" type="Label" parent="."]
+offset_left = 576.0
+offset_top = -509.0
+offset_right = 749.0
+offset_bottom = -461.0
+theme_override_font_sizes/font_size = 32
+text = "Points"
