@@ -32,7 +32,7 @@ public partial class Main : Node2D
             playerScript.Speed += 30;
         }
 
-        timer.WaitTime = random.Next(1, 4);
+        timer.WaitTime = random.Next(1, 3);
     }
 
     /// <summary>
