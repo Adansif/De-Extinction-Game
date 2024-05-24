@@ -67,13 +67,13 @@ public partial class Scores : Control
         var arrayData = (Godot.Collections.Array)json.Data;
 
         var goldDictionary = (Godot.Collections.Dictionary<string, Variant>)arrayData[0];
-        goldScore.Text = "Name: " + goldDictionary["name"] + "     Score: " + goldDictionary["score"];
+        goldScore.Text = "Name: " + goldDictionary["name"] + "\nScore: " + goldDictionary["score"];
 
         var silverDictionary = (Godot.Collections.Dictionary<string, Variant>)arrayData[1];
-        silverScore.Text = "Name: " + silverDictionary["name"] + "     Score: " + silverDictionary["score"];
+        silverScore.Text = "Name: " + silverDictionary["name"] + "\nScore: " + silverDictionary["score"];
 
         var bronzeDictionary = (Godot.Collections.Dictionary<string, Variant>)arrayData[2];
-        bronzeScore.Text = "Name: " + bronzeDictionary["name"] + "     Score: " + bronzeDictionary["score"];
+        bronzeScore.Text = "Name: " + bronzeDictionary["name"] + "\nScore: " + bronzeDictionary["score"];
     }
 
     /// <summary>
