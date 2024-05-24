@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://crjutn63quyh4"]
 
-[ext_resource type="Theme" uid="uid://bf1p7pyhtx1pj" path="res://Font/GlobalTheme.tres" id="1_l1mxs"]
+[ext_resource type="Theme" uid="uid://bf1p7pyhtx1pj" path="res://Assets/Font/GlobalTheme.tres" id="1_req5t"]
 [ext_resource type="Script" path="res://Scripts/Selection.cs" id="2_1ehr6"]
 [ext_resource type="PackedScene" uid="uid://cjbx32p6v8tfy" path="res://Scenes/IdleCharacter.tscn" id="2_o5jgm"]
-[ext_resource type="Texture2D" uid="uid://dukc28sc4i1vj" path="res://Sprites/UI/Panels/Panel.png" id="3_qtu1t"]
+[ext_resource type="Texture2D" uid="uid://dukc28sc4i1vj" path="res://Assets/Sprites/UI/Panels/Panel.png" id="3_j04e4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbfc0"]
-texture = ExtResource("3_qtu1t")
+texture = ExtResource("3_j04e4")
 
 [sub_resource type="Animation" id="Animation_bcksa"]
 resource_name = "Entry"
@@ -69,7 +69,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_l1mxs")
+theme = ExtResource("1_req5t")
 script = ExtResource("2_1ehr6")
 
 [node name="Panel" type="Panel" parent="."]
@@ -95,7 +95,7 @@ offset_bottom = -34.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(4, 4)
-texturePath = "res://Sprites/Character/IdleDoux.png"
+texturePath = "res://Assets/Sprites/Character/IdleDoux.png"
 
 [node name="DouxButton" type="Button" parent="Panel/Doux"]
 layout_mode = 1
@@ -128,7 +128,7 @@ offset_bottom = -33.1667
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(4, 4)
-texturePath = "res://Sprites/Character/IdleMort.png"
+texturePath = "res://Assets/Sprites/Character/IdleMort.png"
 
 [node name="MortButton" type="Button" parent="Panel/Mort"]
 layout_mode = 1
@@ -161,7 +161,7 @@ offset_bottom = -35.1667
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(4, 4)
-texturePath = "res://Sprites/Character/IdleTard.png"
+texturePath = "res://Assets/Sprites/Character/IdleTard.png"
 
 [node name="TardButton" type="Button" parent="Panel/Tard"]
 layout_mode = 1
@@ -194,7 +194,7 @@ offset_bottom = -33.8333
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(4, 4)
-texturePath = "res://Sprites/Character/IdleVita.png"
+texturePath = "res://Assets/Sprites/Character/IdleVita.png"
 
 [node name="VitaButton" type="Button" parent="Panel/Vita"]
 layout_mode = 1

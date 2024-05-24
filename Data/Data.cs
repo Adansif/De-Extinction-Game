@@ -15,6 +15,6 @@ public partial class Data : Node2D
 	};
 	
 	public static string[] apiHeader = new string[] { "Content-Type: application/json" };
-	public static String texturePath = "res://Sprites/Character/";
-	public static String defaultTexture = "res://Sprites/Character/Doux.png";
+	public static String texturePath = "res://Assets/Sprites/Character/";
+	public static String defaultTexture = "res://Assets/Sprites/Character/Doux.png";
 }
