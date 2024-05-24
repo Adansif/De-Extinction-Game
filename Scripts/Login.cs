@@ -42,7 +42,7 @@ public partial class Login : Control
         var body = Json.Stringify(new Godot.Collections.Dictionary
         {
             { "name", username.Text },
-            { "password", password.Text }
+            { "password", PasswordHasher.HashPassword(password.Text)}
         });
 
         request.Request(Data.apiUrls["login"], Data.apiHeader, HttpClient.Method.Post, body);
