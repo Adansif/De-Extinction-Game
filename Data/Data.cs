@@ -4,9 +4,9 @@ using System;
 public partial class Data : Node2D
 {
 	public static Godot.Collections.Dictionary<String, String> apiUrls = new Godot.Collections.Dictionary<String, String>{
-		{ "login", "http://localhost:8082/api/v1/players/login" },
-		{ "scoreUpdate", "http://localhost:8082/api/v1/players/" },
-		{ "scoreGet", "http://localhost:8082/api/v1/players/topscores" },
+		{ "login", "de-extinction-api-production.up.railway.app/api/v1/players/login" },
+		{ "scoreUpdate", "de-extinction-api-production.up.railway.app/api/v1/players/" },
+		{ "scoreGet", "de-extinction-api-production.up.railway.app/api/v1/players/topscores" },
 	};
 	public static Godot.Collections.Dictionary<String, String> scenesUrls = new Godot.Collections.Dictionary<String, String>{
 		{ "selection", "res://Scenes/Selection.tscn" },
